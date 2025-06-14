@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Aryasree 🐾</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: #00ff00;
+      font-family: 'Quicksand', sans-serif;
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .light-mode {
+      background-color: #fff;
+      color: #000;
+    }
+
+    .header {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+      margin-top: 60px;
+      animation: fadeInDown 2s ease-out;
+    }
+
+    .subtext {
+      font-size: 1.5em;
+      margin: 20px;
+      animation: fadeInUp 2s ease-out;
+    }
+
+    .cat {
+      width: 120px;
+      animation: floatCat 4s ease-in-out infinite;
+      margin-top: 40px;
+    }
+
+    .heart {
+      font-size: 5em;
+      color: #00ff00;
+      animation: pulse 1.5s infinite;
+    }
+
+    .footer {
+      margin-top: 60px;
+      font-size: 1em;
+    }
+
+    .love-button, .yes-btn, .no-btn, .mode-toggle {
+      margin: 20px;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: #00ff00;
+      color: black;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+      transition: transform 0.2s;
+      position: relative;
+    }
+
+    .love-button:hover, .yes-btn:hover, .mode-toggle:hover {
+      transform: scale(1.05);
+    }
+
+    .message {
+      display: none;
+      margin-top: 30px;
+      font-size: 1.5em;
+      animation: fadeInUp 2s ease-out;
+    }
+
+    @keyframes floatCat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.2); opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <button class="mode-toggle" onclick="toggleMode()">Toggle Light/Dark Mode</button>
+
+  <div class="header">To Aryasree, My Purr-fect Girl 🐱💖</div>
+  <div class="subtext">You're the reason my heart purrs. Every day with you feels like catnip for my soul. 🌹</div>
+  <div class="heart"❤️</div>
+  <img class="cat" src="cat.png" alt="Cute Cat">
+  <div class="subtext">You're paws-itively the most beautiful thing that's ever happened to me.</div>
+
+  <div class="subtext">Do you want me in your life?</div>
+  <button class="yes-btn" onclick="showMessage()">Yes 💚</button>
+  <button class="no-btn" id="noBtn">No 🙀</button>
+
+  <form id="yesForm" action="https://formspree.io/f/manjjnlp" method="POST" style="display: none;">
+    <input type="hidden" name="message" value="Aryasree clicked YES 💚!">
+    <input type="hidden" name="from" value="proposal@yourdomain.com">
+  </form>
+
+  <div class="message" id="loveMessage">Awww! You just made Anandu the happiest human alive! 🥰🐾</div>
+
+  <div class="footer">Made with love by Anandu 🐾</div>
+
+  <script>
+    function showMessage() {
+      document.getElementById('loveMessage').style.display = 'block';
+      document.getElementById('yesForm').submit();
+    }
+
+    const noBtn = document.getElementById('noBtn');
+    let attempts = 0;
+
+    noBtn.addEventListener('mouseover', function () {
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+      noBtn.style.position = 'absolute';
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+      attempts++;
+    });
+
+    function toggleMode() {
+      document.body.classList.toggle('light-mode');
+    }
+  </script>
+</body>
+</html>
